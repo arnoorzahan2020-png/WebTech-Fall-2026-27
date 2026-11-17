@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Details - Campus Event Board</title>
+
+    <style>
+        /* Plain HTML Form Style matching the screenshot */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            color: #000;
+            background-color: #fff;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #000;
+        }
+
+        /* Navbar */
+        .navbar {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .navbar h2 {
+            display: inline;
+            margin: 0;
+        }
+
+        .navlinks {
+            float: right;
+        }
+
+        .navlinks a {
+            color: blue;
+            text-decoration: underline;
+            margin-left: 15px;
+        }
+
+        /* Fieldset Box Format */
+        fieldset {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #999;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        /* Form Row Layout */
+        .form-row {
+            margin-bottom: 12px;
+        }
+
+        .form-row label {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+            vertical-align: top;
+        }
+
+        .form-row span {
+            display: inline-block;
+            width: 60%;
+        }
+
+        .form-row input[type="text"],
+        .form-row input[type="email"] {
+            padding: 5px;
+            width: 300px;
+        }
+
+        /* Buttons */
+        button, input[type="submit"], input[type="reset"] {
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+
+        /* Banner Visibility */
+        #techBanner, #sportsBanner, #culturalBanner {
+            display: none;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .error {
+            color: red;
+            font-size: 13px;
+            margin: 4px 0 0 154px;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 30px;
+            padding-top: 10px;
+            border-top: 1px solid #ccc;
+            text-align: center;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>Campus Event Board</h2>
+        <div class="navlinks">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+
+    <!-- Header Title -->
+    <div style="text-align: center; margin-bottom: 20px;">
+        <h1 id="eventTitle">Event Details</h1>
+        <p id="techBanner">[Banner: Campus Technology & Innovation Seminar]</p>
+        <p id="sportsBanner">[Banner: Inter-Department Football Tournament]</p>
+        <p id="culturalBanner">[Banner: Annual Campus Cultural Night]</p>
+    </div>
+
+
+    <!-- 1. Event Information Fieldset -->
+    <fieldset>
+        <legend>Event Information</legend>
+
+        <div class="form-row">
+            <label>Date:</label>
+            <span id="eventDate">2026-11-12</span>
+        </div>
+
+        <div class="form-row">
+            <label>Venue:</label>
+            <span id="eventVenue">Main Auditorium</span>
+        </div>
+
+        <div class="form-row">
+            <label>Category:</label>
+            <span id="eventCategory">Seminar</span>
+        </div>
+
+        <div class="form-row">
+            <label>Description:</label>
+            <span id="eventDescription">Join our campus technology seminar.</span>
+        </div>
+    </fieldset>
+
+
+    <!-- 2. Countdown & Seat Status Fieldset -->
+    <fieldset>
+        <legend>Event Status & Seats</legend>
+
+        <div class="form-row">
+            <label>Event Date:</label>
+            <span id="countdownDate">2026-11-12</span>
+        </div>
+
+        <div class="form-row">
+            <label>Seats Available:</label>
+            <span><strong id="registered">25</strong> / <strong id="totalSeats">100</strong> Registered</span>
+        </div>
+    </fieldset>
+
+
+    <!-- 3. Event Registration Form Fieldset -->
+    <fieldset>
+        <legend>Register for this Event</legend>
+
+        <form id="eventRegForm">
+            <div class="form-row">
+                <label for="studentId">Student ID:</label>
+                <input type="text" id="studentId" placeholder="Enter your student ID">
+                <p id="idError" class="error"></p>
+            </div>
+
+            <div class="form-row">
+                <label for="studentEmail">Email:</label>
+                <input type="email" id="studentEmail" placeholder="Enter your email">
+                <p id="emailError" class="error"></p>
+            </div>
+
+            <div class="form-row">
+                <label></label>
+                <button type="submit">Confirm Registration</button>
+                <a href="login.html"><button type="button">Login to register</button></a>
+            </div>
+            <p id="regMessage" style="margin-left: 154px; font-weight: bold;"></p>
+        </form>
+    </fieldset>
+
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Stay updated with upcoming campus events!</p>
+        <p>Copyright 2026 | Campus Event Board</p>
+    </div>
+
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Event Data List
+        let eventsData = {
+            "1": {
+                title: "Tech Seminar",
+                date: "2026-11-12",
+                venue: "Main Auditorium",
+                category: "Seminar",
+                description: "Join our campus technology seminar.",
+                registered: 25,
+                seats: 100
+            },
+            "2": {
+                title: "Football Cup",
+                date: "2026-11-15",
+                venue: "Ground",
+                category: "Sports",
+                description: "Join our campus sports tournament.",
+                registered: 40,
+                seats: 50
+            },
+            "3": {
+                title: "Cultural Night",
+                date: "2026-11-20",
+                venue: "Hall",
+                category: "Cultural",
+                description: "Join our campus cultural night.",
+                registered: 60,
+                seats: 100
+            }
+        };
+
+        // Read URL Parameter (?id=1, 2, or 3)
+        let params = new URLSearchParams(window.location.search);
+        let eventId = params.get("id") || "1"; // Default to event 1 if opened directly
+
+        // Banner Toggle Logic (from event_3.js)
+        if (eventId == "1") {
+            document.getElementById("techBanner").style.display = "block";
+        } else if (eventId == "2") {
+            document.getElementById("sportsBanner").style.display = "block";
+        } else if (eventId == "3") {
+            document.getElementById("culturalBanner").style.display = "block";
+        }
+
+        // Populate Event Details
+        let currentEvent = eventsData[eventId];
+        if (currentEvent) {
+            document.getElementById("eventTitle").innerText = currentEvent.title;
+            document.getElementById("eventDate").innerText = currentEvent.date;
+            document.getElementById("eventVenue").innerText = currentEvent.venue;
+            document.getElementById("eventCategory").innerText = currentEvent.category;
+            document.getElementById("eventDescription").innerText = currentEvent.description;
+            document.getElementById("countdownDate").innerText = currentEvent.date;
+            document.getElementById("registered").innerText = currentEvent.registered;
+            document.getElementById("totalSeats").innerText = currentEvent.seats;
+        }
+
+        // Registration Form Validation
+        document.getElementById("eventRegForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let sId = document.getElementById("studentId").value.trim();
+            let sEmail = document.getElementById("studentEmail").value.trim();
+            let idError = document.getElementById("idError");
+            let emailError = document.getElementById("emailError");
+            let regMessage = document.getElementById("regMessage");
+
+            idError.innerText = "";
+            emailError.innerText = "";
+            regMessage.innerText = "";
+
+            let isValid = true;
+
+            if (sId === "") {
+                idError.innerText = "Please enter your Student ID.";
+                isValid = false;
+            }
+
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (sEmail === "") {
+                emailError.innerText = "Please enter your email.";
+                isValid = false;
+            } else if (!emailRegex.test(sEmail)) {
+                emailError.innerText = "Please enter a valid email address.";
+                isValid = false;
+            }
+
+            if (isValid) {
+                regMessage.style.color = "green";
+                regMessage.innerText = "Successfully registered for " + currentEvent.title + "!";
+            }
+        });
+    </script>
+
+</body>
+</html>
