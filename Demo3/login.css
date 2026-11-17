@@ -1,0 +1,150 @@
+/* General Styling */
+
+body {
+    margin: 0;
+    padding: 30px;
+    background-color: rgb(189, 208, 217);
+    font-family: Arial, sans-serif;
+}
+
+
+/* Navigation Bar */
+
+.navbar {
+    background-color: #203F89;
+    color: white;
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 18px;
+}
+
+
+/* Login Container */
+
+.login-container {
+    background-color: #E4E6EA;
+    border: 3px solid gray;
+    border-radius: 15px;
+
+    margin-top: 20px;
+    padding: 50px;
+
+    min-height: 420px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Login Box */
+
+.login-box {
+    background-color: white;
+    border: 2px solid #7A8494;
+
+    width: 450px;
+    padding: 25px;
+
+}
+
+
+/* Login Heading */
+
+.login-box h2 {
+    color: #203F89;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+
+
+/* Input Fields */
+
+.login-box input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 9px 12px;
+    margin-top: 5px;
+
+    border: 2px solid #7A8494;
+
+    font-size: 17px;
+}
+
+
+/* Password Box */
+
+.password-box {
+    display: flex;
+    align-items: center;
+}
+
+.password-box input {
+    flex: 1;
+}
+
+.password-box button {
+    padding: 10px;
+    border: 2px solid #7A8494;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+/* Error Message */
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin: 5px 0 10px;
+}
+
+
+/* Register Link */
+
+.register-link {
+    text-align: center;
+    margin-top: 40px;
+    color: #203F89;
+    font-size: 16px;
+}
+
+.register-link a {
+    color: #203F89;
+    text-decoration: none;
+}
+
+
+/* Login Button */
+
+.login-button {
+    width: 100%;
+    padding: 10px;
+
+    background-color: #F9A000;
+    border: none;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #E89000;
+}

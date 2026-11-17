@@ -1,0 +1,110 @@
+
+/* Main Page */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: black;
+    background-color: rgb(193, 214, 237);
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container */
+
+.container {
+    max-width: 1500px;
+    min-height: 700px;
+    margin: 0 auto;
+    padding: 20px 25px;
+    background-color: #e5e7eb;
+    border: 3px solid #9ca3af;
+    border-radius: 15px;
+}
+
+/* Navbar */
+
+.navbar {
+    background-color: #203e87;
+    color: white;
+    padding: 10px 20px;
+    overflow: hidden;
+}
+
+.navbar h2 {
+    float: left;
+    margin: 10px 0;
+}
+
+.navlinks {
+    float: right;
+    padding: 12px;
+}
+
+.navlinks a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+/* Registration Box */
+
+.register-box {
+    background-color: white;
+    border: 2px solid #687386;
+    width: 60%;
+    margin: 25px auto 5px auto;
+    padding: 15px 25px;
+}
+
+.register-box h2 {
+    color: #203e87;
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Input Fields */
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 18px;
+    border: 2px solid #687386;
+    margin-bottom: 5px;
+}
+
+/* Error Messages */
+
+p {
+    color: red;
+    text-align: left;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 3px 0 10px 0;
+}
+
+/* Register Button */
+
+#submit {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: orange;
+    color: black;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+#submit:hover {
+    background-color: #203e87;
+    color: white;
+}

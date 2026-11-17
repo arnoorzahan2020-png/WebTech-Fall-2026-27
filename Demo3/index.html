@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Campus Event Board</title>
+
+    <link rel="stylesheet" href="../Demo3/guest.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Navbar -->
+
+        <div class="navbar">
+
+            <h2>Event Board</h2>
+
+            <div class="navlinks">
+
+                <a href="index.html">Home</a>
+
+                <a href="login.html">Login</a>
+
+                <a href="register.html">Register</a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Hero Section -->
+
+        <div class="hero">
+
+            <h1>Find and Join Campus Events</h1>
+
+            <p>Discover exciting events happening on your campus!</p>
+
+
+            <!-- Search Form -->
+
+            <form id="searchForm">
+
+                <input type="text" id="searchInput"
+                placeholder="Search events...">
+
+                <input type="submit" id="searchButton"
+                value="Search">
+
+                <p id="searchError"></p>
+
+            </form>
+
+        </div>
+
+
+        <!-- Category Filter -->
+
+        <div class="filter">
+
+            <input type="button" id="allBtn" value="All">
+
+            <input type="button" id="seminarBtn" value="Seminar">
+
+            <input type="button" id="sportsBtn" value="Sports">
+
+            <input type="button" id="culturalBtn" value="Cultural">
+
+
+            <label for="sortEvents">Sort by:</label>
+
+            <select id="sortEvents">
+
+                <option value="ascending">
+                    Date: Earliest First
+                </option>
+
+                <option value="descending">
+                    Date: Latest First
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- Event Cards -->
+
+        <h2 class="section-title">Upcoming Events</h2>
+
+        <div id="eventList">
+
+            <!-- JavaScript will show approved events here -->
+
+        </div>
+
+        <p id="noEvents"></p>
+
+
+        <!-- Footer / Subscribe -->
+
+        <div class="footer">
+
+            <p>Stay updated with upcoming campus events!</p>
+
+
+            <!--<form id="subscribeForm">
+
+                <input type="email" id="subscribeEmail"
+                placeholder="Enter your email">
+
+                <input type="submit" id="subscribeButton"
+                value="Subscribe">
+
+                <p id="subscribeMessage"></p>
+
+            </form>-->
+
+            <p>Copyright 2026 | Campus Event Board</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript Files -->
+
+    <script src="../Demo3/guest.js"></script>
+
+</body>
+
+</html>
