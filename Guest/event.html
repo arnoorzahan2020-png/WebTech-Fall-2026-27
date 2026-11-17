@@ -1,226 +1,85 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Details - Campus Event Board</title>
 
-    <style>
-        /* Plain HTML Form Style matching the screenshot */
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 15px;
-            color: #000;
-            background-color: #fff;
-            margin: 20px;
-        }
+    <title>Event Details</title>
 
-        h1, h2 {
-            color: #000;
-        }
-
-        /* Navbar */
-        .navbar {
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #ccc;
-        }
-
-        .navbar h2 {
-            display: inline;
-            margin: 0;
-        }
-
-        .navlinks {
-            float: right;
-        }
-
-        .navlinks a {
-            color: blue;
-            text-decoration: underline;
-            margin-left: 15px;
-        }
-
-        /* Fieldset Box Format */
-        fieldset {
-            margin-bottom: 20px;
-            padding: 15px;
-            border: 1px solid #999;
-        }
-
-        legend {
-            font-weight: bold;
-        }
-
-        /* Form Row Layout */
-        .form-row {
-            margin-bottom: 12px;
-        }
-
-        .form-row label {
-            display: inline-block;
-            width: 150px;
-            font-weight: bold;
-            vertical-align: top;
-        }
-
-        .form-row span {
-            display: inline-block;
-            width: 60%;
-        }
-
-        /* Login Button Style */
-        .loginButton {
-            padding: 8px 16px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        /* Banner Visibility */
-        #techBanner, #sportsBanner, #culturalBanner {
-            display: none;
-            font-weight: bold;
-            margin-top: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="../Demo3/event.css">
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <div class="navbar">
-        <h2>Event Board</h2>
-        <div class="navlinks">
-            <a href="index.html">Home</a>
-            <a href="login.html">Login</a>
-            <a href="register.html">Register</a>
+    <div class="container">
+
+        <!-- Navbar -->
+        <div class="navbar">
+
+            <h2>Event Board</h2>
+
+            <div class="navlinks">
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+            </div>
+
         </div>
-        <div style="clear: both;"></div>
+
+        <!-- Event Banner -->
+        <div class="event-banner">
+            <h2 id="eventTitle">EVENT BANNER</h2>
+        </div>
+
+        <!-- Event Information -->
+        <div class="event-layout">
+
+            <!-- Left Side: Event Details -->
+            <div class="event-info">
+
+                <p>Date: <span id="eventDate"></span></p>
+
+                <p>Venue: <span id="eventVenue"></span></p>
+
+                <p>Category: <span id="eventCategory"></span></p>
+
+                <p>Description:</p>
+
+                <p id="eventDescription"></p>
+
+            </div>
+
+            <!-- Right Side: Countdown and Seats -->
+            <div class="event-side">
+
+                <!-- Countdown -->
+                <div class="countdown-box">
+                    <h3>COUNTDOWN</h3>
+                    <h3>Event Date: <span id="countdownDate"></span></h3>
+                </div>
+
+                <!-- Seat Counter -->
+                <div class="seats-box">
+                    <h3>SEATS <span id="registered"></span> /
+                    <span id="totalSeats"></span></h3>
+                </div>
+
+                <!-- Login Button -->
+                <a href="login.html">
+                    <button type="button" class="loginButton">
+                        Login to register
+                    </button>
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <!-- Header Title -->
-    <div style="text-align: center; margin-bottom: 20px;">
-        <h1 id="eventTitle">Event Details</h1>
-        <p id="techBanner">[Banner: Campus Technology & Innovation Seminar]</p>
-        <p id="sportsBanner">[Banner: Inter-Department Football Tournament]</p>
-        <p id="culturalBanner">[Banner: Annual Campus Cultural Night]</p>
-    </div>
-
-
-    <!-- 1. Event Information Fieldset -->
-    <fieldset>
-        <legend>Event Information</legend>
-
-        <div class="form-row">
-            <label>Date:</label>
-            <span id="eventDate"></span>
-        </div>
-
-        <div class="form-row">
-            <label>Venue:</label>
-            <span id="eventVenue"></span>
-        </div>
-
-        <div class="form-row">
-            <label>Category:</label>
-            <span id="eventCategory"></span>
-        </div>
-
-        <div class="form-row">
-            <label>Description:</label>
-            <span id="eventDescription"></span>
-        </div>
-    </fieldset>
-
-
-    <!-- 2. Countdown & Seats Fieldset -->
-    <fieldset>
-        <legend>Event Countdown & Seats</legend>
-
-        <div class="form-row">
-            <label>Event Date:</label>
-            <span id="countdownDate"></span>
-        </div>
-
-        <div class="form-row">
-            <label>Seats Status:</label>
-            <span><strong id="registered"></strong> / <strong id="totalSeats"></strong> Registered</span>
-        </div>
-    </fieldset>
-
-
-    <!-- 3. Registration Action Fieldset -->
-    <fieldset>
-        <legend>Registration Action</legend>
-
-        <div class="form-row" style="text-align: center; margin: 10px 0;">
-            <a href="login.html">
-                <button type="button" class="loginButton">Login to register</button>
-            </a>
-        </div>
-    </fieldset>
-
-
-    <!-- JavaScript Logic -->
-    <script>
-        // Event Data Dictionary
-        let eventsData = {
-            "1": {
-                title: "Tech Seminar",
-                date: "2026-11-12",
-                venue: "Main Auditorium",
-                category: "Seminar",
-                description: "Join our campus technology seminar.",
-                registered: 25,
-                seats: 100
-            },
-            "2": {
-                title: "Football Cup",
-                date: "2026-11-15",
-                venue: "Ground",
-                category: "Sports",
-                description: "Join our campus sports tournament.",
-                registered: 40,
-                seats: 50
-            },
-            "3": {
-                title: "Cultural Night",
-                date: "2026-11-20",
-                venue: "Hall",
-                category: "Cultural",
-                description: "Join our campus cultural night.",
-                registered: 60,
-                seats: 100
-            }
-        };
-
-        // Read URL Parameter (?id=1, 2, or 3)
-        let params = new URLSearchParams(window.location.search);
-        let eventId = params.get("id") || "1";
-
-        // Banner Toggle Logic
-        if (eventId == "1") {
-            document.getElementById("techBanner").style.display = "block";
-        } else if (eventId == "2") {
-            document.getElementById("sportsBanner").style.display = "block";
-        } else if (eventId == "3") {
-            document.getElementById("culturalBanner").style.display = "block";
-        }
-
-        // Populate Event Details
-        let currentEvent = eventsData[eventId];
-        if (currentEvent) {
-            document.getElementById("eventTitle").innerText = currentEvent.title;
-            document.getElementById("eventDate").innerText = currentEvent.date;
-            document.getElementById("eventVenue").innerText = currentEvent.venue;
-            document.getElementById("eventCategory").innerText = currentEvent.category;
-            document.getElementById("eventDescription").innerText = currentEvent.description;
-            document.getElementById("countdownDate").innerText = currentEvent.date;
-            document.getElementById("registered").innerText = currentEvent.registered;
-            document.getElementById("totalSeats").innerText = currentEvent.seats;
-        }
-    </script>
+    <script src="../Demo3/event.js"></script>
 
 </body>
 </html>

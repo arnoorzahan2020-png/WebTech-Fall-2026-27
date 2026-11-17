@@ -1,0 +1,140 @@
+/* Event Details Page */
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18px;
+    color: black;
+    background-color: rgb(193, 214, 237);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* Navbar */
+
+.navbar {
+    background-color: #203e87;
+    color: white;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.navbar h2 {
+    float: left;
+    margin: 5px;
+}
+
+.navlinks {
+    float: right;
+    padding: 12px;
+}
+
+.navlinks a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+}
+
+/* Event Banner */
+
+.event-banner {
+    background-color: #d1d5db;
+    border: 3px solid #97a7ba;
+    text-align: center;
+    padding: 30px;
+    margin-top: 20px;
+}
+
+.event-banner h2 {
+    color: #203e87;
+}
+
+/* Event Information Layout */
+
+.event-layout {
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.event-info {
+    background-color: white;
+    border: 2px solid #687386;
+    width: 52%;
+    height: 270px;
+    padding: 20px;
+    float: left;
+}
+
+.event-info p {
+    margin: 10px;
+    font-size: 18px;
+}
+
+.event-side {
+    background-color: white;
+    border: 2px solid #687386;
+    width: 39%;
+    height: 270px;
+    padding: 20px;
+    float: right;
+}
+
+/* Countdown Box */
+
+.countdown-box {
+    background-color: #dceaff;
+    border: 2px solid #203e87;
+    color: #203e87;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.countdown-box h3 {
+    margin: 5px;
+}
+
+/* Seats Box */
+
+.seats-box {
+    background-color: #dcfce7;
+    border: 2px solid #16a34a;
+    color: #16a34a;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
+.seats-box h3 {
+    margin: 5px;
+}
+
+/* Login Button */
+
+.loginButton {
+    background-color: orange;
+    color: black;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.loginButton:hover {
+    background-color: #203e87;
+    color: white;
+}
+#techBanner,
+#sportsBanner,
+#culturalBanner {
+    display: none;
+}
